@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="carouselstyle.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+</head>
+
+<body>
+    <header>
+
+        <nav id="navbar" class="nav">
+            <ul class="nav-list">
+                <li>
+                    <a href="#welcome-section">About Me</a>
+                </li>
+                <li>
+                    <a href="#projects">Work</a>
+                </li>
+                <li>
+                    <a href="#contact">Contact</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div id="welcome-section" class="welcome-section">
+
+        <div class="welcome-text">
+            <h1>Hello I am Mugurel</h1>
+            <p>a web developer</p>
+        </div>
+
+        <div class="welcome-image">
+            <img src="undraw_Hello_qnas.svg">
+
+        </div>
+    </div>
+    <div id="projects">
+        <h2 class="projects-section-header project-tile">Projects Made</h2>
+
+        <section class="carousel" aria-label="Gallery">
+            <ol class="carousel__viewport">
+                <li id="carousel__slide1" tabindex="0" class="carousel__slide">
+                    <div class="carousel__snapper">
+                        <div style="background: url(tributepage.png);" class="image">
+
+                        </div>
+                        <div class="about-project">
+                            <h1 class="project-tile"> Tribute page for Tim Bergling </h1>
+                            <a href="https://github.com/MafteiMugurel/Tribute-Page"><button type="button">View
+                                    code</button></a>
+                        </div>
+
+                    </div>
+                    <a href="#carousel__slide4" class="carousel__prev">Go to last slide</a>
+                    <a href="#carousel__slide2" class="carousel__next">Go to next slide</a>
+                </li>
+                <li id="carousel__slide2" tabindex="0" class="carousel__slide">
+                    <div class="carousel__snapper">
+                        <div style="background: url(surveyform.png);" class="image">
+
+                        </div>
+                        <div class="about-project">
+                            <h1 class="project-tile"> Survey form to adopt cats </h1>
+                            <a href="https://github.com/MafteiMugurel/Survey-Form"><button type="button">View
+                                    code</button></a>
+
+                        </div>
+                    </div>
+                    <a href="#carousel__slide1" class="carousel__prev">Go to previous slide</a>
+                    <a href="#carousel__slide3" class="carousel__next">Go to next slide</a>
+                </li>
+                <li id="carousel__slide3" tabindex="0" class="carousel__slide">
+                    <div class="carousel__snapper">
+                        <div style="background: url(productlanding.png);" class="image">
+
+                        </div>
+                        <div class="about-project">
+                            <h1 class="project-tile"> Product landing about Asus ZenWatch3 </h1>
+                            <a href="https://github.com/MafteiMugurel/Product-Landing"><button type="button">View
+                                    code</button></a>
+
+                        </div>
+                    </div>
+                    <a href="#carousel__slide2" class="carousel__prev">Go to previous slide</a>
+                    <a href="#carousel__slide4" class="carousel__next">Go to next slide</a>
+                </li>
+                <li id="carousel__slide4" tabindex="0" class="carousel__slide">
+                    <div class="carousel__snapper">
+                        <div style="background: url(tehnicaldocumentation.png);" class="image">
+
+                        </div>
+                        <div class="about-project">
+                            <h1 class="project-tile"> JavaScript Technical documentation </h1>
+                            <a href="https://github.com/MafteiMugurel/Technical-Documentation"><button
+                                    type="button">View
+                                    code</button></a>
+
+                        </div>
+                    </div>
+                    <a href="#carousel__slide3" class="carousel__prev">Go to previous slide</a>
+                    <a href="#carousel__slide1" class="carousel__next">Go to first slide</a>
+                </li>
+            </ol>
+        </section>
+        <section class="contact-section" id="contact">
+            <h1>
+                We can work together?
+            </h1>
+            <img src="arrow.svg" class="arrow">
+
+            <div class="contact-links">
+                <a href="https://facebook.com/freecodecamp" target="_blank" class="btn contact-details"><i
+                        class="fab fa-facebook-square"></i> Facebook</a>
+
+                <a id="profile-link" href="https://github.com/MafteiMugurel" target="_blank"
+                    class="btn contact-details"><i class="fab fa-github"></i> GitHub</a>
+
+                <a href="https://mail.google.com/mail/u/2/?tab=wm&ogbl#inbox" class="btn contact-details"><i
+                        class="fas fa-at"></i> Send a mail</a>
+                <a href="https://www.linkedin.com/in/maftei-vasilica-mugurel-a53b891a8/" class="btn contact-details"><i
+                        class="fab fa-linkedin"></i> LinkedIn</a>
+            </div>
+
+        </section>
+    </div>
+</body>
+
+</html>

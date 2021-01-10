@@ -1,0 +1,125 @@
+:root {
+    --white: #F5F5F5;
+    --black: #001524;
+    --red: #A41623;
+    --mandarina: #E57A44;
+    --low-opaciti: #e57a440f;
+}
+
+body {
+    margin: 0;
+    font-family: monospace;
+    font-size: 18px;
+}
+
+#navbar {
+    display: flex;
+    position: fixed;
+    background: linear-gradient(-100deg, var(--red), var(--mandarina));
+    top: 0;
+    left: 0;
+    justify-content: flex-end;
+
+}
+
+.nav-list {
+    display: flex;
+    font-weight: bolder;
+    text-transform: uppercase;
+
+}
+
+ul {
+    list-style: none;
+
+}
+
+#navbar li {
+    padding: 0 10px !important;
+}
+
+.nav {
+    display: flex;
+    justify-content: flex-end;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+
+}
+
+.welcome-section {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    justify-content: space-evenly;
+    flex-direction: row;
+    background-color: var(--white);
+    align-items: center;
+}
+
+.contact-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    text-align: center;
+    width: 100%;
+    background: linear-gradient(-100deg, var(--mandarina), var(--red));
+    color: var(--black);
+    padding: 10px;
+}
+
+.contact-section {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    text-align: center;
+    color: var(--black);
+    background-color: var(--white);
+    padding-top: 1px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--white);
+
+}
+
+.contact-details {
+    padding: 0 10px;
+}
+
+.arrow {
+    width: 50px;
+    margin-right: 15px;
+}
+
+
+
+.welcome-image {
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-end;
+    transform: scaleX(-1);
+}
+
+.welcome-text p {
+    text-align: center;
+    color: var(--black);
+    font-size: 30px;
+}
+
+.welcome-text h1 {
+    text-align: center;
+    color: var(--red);
+    font-size: 85px;
+    font-weight: 100;
+    font-family: "Brush Script MT";
+    margin-top: 35%;
+}
+
+.welcome-text {
+    height: 100%;
+}
