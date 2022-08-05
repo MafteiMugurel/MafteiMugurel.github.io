@@ -1,0 +1,26 @@
+body {
+  margin: 0;
+}
+
+.nav-bar {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 5vh;
+  background-color: burlywood;
+
+  a {
+    padding: 0 1vw;
+    text-decoration: none;
+  }
+
+  .nav-bar-list {
+    display: flex;
+
+    a {
+      padding: 0 1vw;
+      text-decoration: none;
+    }
+  }
+}
