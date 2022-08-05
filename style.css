@@ -22,4 +22,26 @@ body {
   text-decoration: none;
 }
 
+.banner {
+  display: flex;
+  flex-flow: row;
+  height: 40vh;
+}
+.banner .banner-left {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  background-color: coral;
+  flex: 1 1 60%;
+}
+.banner .banner-right {
+  background-color: crimson;
+  flex: 1 1 40%;
+}
+.banner .banner-right img {
+  border-radius: 50%;
+  height: -webkit-fill-available;
+}
+
 /*# sourceMappingURL=style.css.map */
