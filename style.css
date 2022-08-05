@@ -14,12 +14,8 @@ body {
   padding: 0 1vw;
   text-decoration: none;
 }
-.nav-bar .nav-bar-list {
+.nav-bar-list {
   display: flex;
-}
-.nav-bar .nav-bar-list a {
-  padding: 0 1vw;
-  text-decoration: none;
 }
 
 .banner {
@@ -27,7 +23,7 @@ body {
   flex-flow: row;
   height: 40vh;
 }
-.banner .banner-left {
+.banner-left {
   display: flex;
   flex-flow: column;
   align-items: center;
@@ -35,13 +31,42 @@ body {
   background-color: coral;
   flex: 1 1 60%;
 }
-.banner .banner-right {
+.banner-right {
   background-color: crimson;
   flex: 1 1 40%;
 }
-.banner .banner-right img {
+.banner-right img {
   border-radius: 50%;
   height: -webkit-fill-available;
+}
+
+.about {
+  height: 30vh;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  background-color: aqua;
+  padding: 0 10vw;
+  justify-content: center;
+}
+.about-title {
+  flex: 1 1 30%;
+}
+.about-description {
+  display: flex;
+  flex-flow: column;
+}
+.about-description-text {
+  flex: 1 1 auto;
+}
+.about-description-buttons {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  padding-top: 3vh;
+}
+.about-description-buttons a {
+  padding: 0 3vw;
 }
 
 /*# sourceMappingURL=style.css.map */

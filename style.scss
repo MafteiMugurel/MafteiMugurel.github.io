@@ -15,36 +15,63 @@ body {
     text-decoration: none;
   }
 
-  .nav-bar-list {
+  &-list {
     display: flex;
-
-    a {
-      padding: 0 1vw;
-      text-decoration: none;
-    }
   }
 }
 
 .banner {
+  display: flex;
+  flex-flow: row;
+  height: 40vh;
+
+  &-left {
     display: flex;
-    flex-flow: row;
-    height: 40vh;
-
-    .banner-left {
-        display: flex;
-        flex-flow: column;
-        align-items: center;
-        justify-content: center;
-        background-color: coral;
-        flex: 1 1 60%;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    background-color: coral;
+    flex: 1 1 60%;
+  }
+  &-right {
+    background-color: crimson;
+    flex: 1 1 40%;
+    img {
+      border-radius: 50%;
+      height: -webkit-fill-available;
     }
-    .banner-right {
-        background-color: crimson;
-        flex: 1 1 40%;
-        img {
-            border-radius: 50%;
-            height: -webkit-fill-available;
-        }
+  }
+}
+
+.about {
+  height: 30vh;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  background-color: aqua;
+  padding: 0 10vw;
+  justify-content: center;
+
+  &-title {
+    flex: 1 1 30%;
+  }
+
+  &-description {
+    display: flex;
+    flex-flow: column;
+
+    &-text {
+      flex: 1 1 auto;
     }
 
+    &-buttons {
+      display: flex;
+      flex-flow: row;
+      justify-content: center;
+      padding-top: 3vh;
+      a {
+        padding: 0 3vw;
+      }
+    }
+  }
 }
