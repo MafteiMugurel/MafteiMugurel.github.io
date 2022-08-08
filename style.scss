@@ -75,3 +75,45 @@ body {
     }
   }
 }
+.experience {
+  background-color: yellow;
+  .content {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+   
+    .skill {
+      padding: 10px;
+      min-width: 140px;
+
+      img {
+        height: 80px;
+        width: auto;
+      }
+     
+      .progress-bar {
+        width: 100%;
+        background-color: #e0e0e0;
+        padding: 3px;
+        border-radius: 3px;
+        box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+        &-fill {
+          display: block;
+          height: 10px;
+          background-color: #659cef;
+          border-radius: 3px;
+
+          transition: width 500ms ease-in-out;
+        }
+      }
+    }
+  }
+}
+.title {
+  font-weight: bold;
+  text-align: center;
+}
+
+.content {
+  text-align: center;
+}
