@@ -1,0 +1,32 @@
+.about {
+  height: 30vh;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  background-color: var(--black);
+  padding: 0 10vw;
+  justify-content: center;
+
+  &-title {
+    flex: 1 1 30%;
+  }
+
+  &-description {
+    display: flex;
+    flex-flow: column;
+
+    &-text {
+      flex: 1 1 auto;
+    }
+
+    &-buttons {
+      display: flex;
+      flex-flow: row;
+      justify-content: center;
+      padding-top: 3vh;
+      a {
+        padding: 0 3vw;
+      }
+    }
+  }
+}

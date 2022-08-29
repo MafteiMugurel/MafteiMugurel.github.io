@@ -7,7 +7,7 @@
   height: 50vh;
   background: linear-gradient(
     to right,
-    var(--black) 67%,
+    var(--grey) 67%,
     var(--primary) 67%,
     var(--primary) 100%
   );
@@ -30,7 +30,7 @@
       padding: 5px 15px;
       text-transform: uppercase;
       color: var(--primary);
-      background-color: var(--black);
+      background-color: var(--grey);
       border-color: var(--primary);
     }
   }
