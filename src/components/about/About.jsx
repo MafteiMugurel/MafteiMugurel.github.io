@@ -1,3 +1,4 @@
+import CVFile from "../../assets/CV.pdf";
 import "./About.scss";
 
 const About = () => {
@@ -13,7 +14,7 @@ const About = () => {
         </div>
         <div className="about-description-buttons">
           <a href="#contact">Contact Me</a>
-          <a href="./Assets/CV.pdf" target="_blank">
+          <a href={CVFile} target="_blank">
             Download CV
           </a>
         </div>

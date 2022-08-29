@@ -1,0 +1,28 @@
+.recommendations {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  &-title {
+    font-size: 30px;
+    font-weight: bolder;
+  }
+
+  &-content {
+    display: flex;
+    flex-flow: column;
+    &-recommendation {
+      display: flex;
+      flex-flow: column;
+
+      &-text {
+        font-size: 14px;
+      }
+
+      &-author {
+        align-self: end;
+        font-size: 18px;
+      }
+    }
+  }
+}
