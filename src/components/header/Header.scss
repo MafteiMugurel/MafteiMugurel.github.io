@@ -1,0 +1,18 @@
+.nav-bar {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 5vh;
+  background-color: var(--black);
+
+  a {
+    padding: 0 1vw;
+    text-decoration: none;
+    color: var(--primary);
+  }
+
+  &-list {
+    display: flex;
+  }
+}

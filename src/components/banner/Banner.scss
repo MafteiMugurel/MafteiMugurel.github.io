@@ -1,0 +1,37 @@
+.banner {
+  padding-left: 10%;
+  padding-right: 10%;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+  height: 50vh;
+  background: linear-gradient(
+    to right,
+    var(--black) 67%,
+    var(--primary) 67%,
+    var(--primary) 100%
+  );
+
+  &-left {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    div {
+      padding-bottom: 8px;
+    }
+    &-name {
+      font-size: 50px;
+      font-weight: bolder;
+      color: var(--primary);
+    }
+    &-button {
+      width: fit-content;
+      border-radius: 5px;
+      padding: 5px 15px;
+      text-transform: uppercase;
+      color: var(--primary);
+      background-color: var(--black);
+      border-color: var(--primary);
+    }
+  }
+}

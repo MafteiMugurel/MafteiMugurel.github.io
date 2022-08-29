@@ -1,33 +1,14 @@
-import { useState } from "react";
+// import { useState } from "react";
 import "./App.scss";
-import CVFile from "./assets/CV.pdf";
+import Banner from "./components/banner/Banner";
+import Header from "./components/header/Header";
 
 function App() {
   return (
     <div className="App">
-      <div className="nav-bar">
-        <a href="#">MafteiMugurel</a>
-        <div className="nav-bar-list">
-          <a href="#about">About</a>
-          <a href="#experience">Experience</a>
-          <a href="#portofolio">Portofolio</a>
-          <a href="#contact">Contact</a>
-          <a href={CVFile} target="_blank">
-            Resume
-          </a>
-        </div>
-      </div>
+      <Header />
+      <Banner />
 
-      <div className="banner">
-        <div className="banner-left">
-          <div>Hello</div>
-          <div>I'm Mugurel</div>
-          <button>Here Me</button>
-        </div>
-        <div className="banner-right">
-          {/* <img src="Assets/image-me.jpg" alt="" /> */}
-        </div>
-      </div>
       <div id="about" className="about">
         <div className="about-title">About Me</div>
         <div className="about-description">

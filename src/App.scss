@@ -1,46 +1,17 @@
+:root {
+  --primary: #fbb000;
+  --secondary: #0094c2;
+  --white: #ffffff;
+  --black: #2c2c2c;
+  --burgundy: #e10032;
+  --cream: #f4e6d5;
+  --peach: #fcd8a2;
+}
+
 body {
   margin: 0;
-}
-
-.nav-bar {
-  display: flex;
-  flex-flow: row;
-  justify-content: space-between;
-  align-items: center;
-  height: 5vh;
-  background-color: burlywood;
-
-  a {
-    padding: 0 1vw;
-    text-decoration: none;
-  }
-
-  &-list {
-    display: flex;
-  }
-}
-
-.banner {
-  display: flex;
-  flex-flow: row;
-  height: 40vh;
-
-  &-left {
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    justify-content: center;
-    background-color: coral;
-    flex: 1 1 60%;
-  }
-  &-right {
-    background-color: crimson;
-    flex: 1 1 40%;
-    img {
-      border-radius: 50%;
-      height: -webkit-fill-available;
-    }
-  }
+  color: var(--white);
+  background-color: var(--black);
 }
 
 .about {
