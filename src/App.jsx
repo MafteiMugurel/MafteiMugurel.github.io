@@ -2,8 +2,9 @@
 import Header from "./components/header/Header";
 import Banner from "./components/banner/Banner";
 import About from "./components/about/About";
-import "./App.scss";
 import Skills from "./components/skills/Skills";
+import Education from "./components/education/Education";
+import "./App.scss";
 
 function App() {
   return (
@@ -12,32 +13,9 @@ function App() {
       <Banner />
       <About />
       <Skills />
+      <Education />
 
-      <div id="experience" className="experience">
-        <div className="title">Education</div>
-        <div className="content">
-          <div>
-            {/* <img src="Assets/icons/ScoalaInformaladeIT.jpg" alt="" /> */}
-            <div>
-              Scoala Informala IT Frontend Developer, Computer Software
-              EngineeringFrontend Developer, Computer Software Engineering May
-              2022 - Aug 2022May 2022 - Aug 2022 The course includes the
-              following chapters: - GIT and Visual Studio Code; - HTML and CSS;
-              - Responsive design; - Javascript; - AJAX and Promises; - OOP; -
-              ES6; - BOM; - React; - A final project containing all the
-              technologies learned.
-            </div>
-          </div>
-          <div>
-            {/* <img src="Assets/icons/Apollonia.png" alt="" /> */}
-            <div>
-              Universitatea „Apollonia” din Iași Bachelor's degree, Medicinal
-              and Pharmaceutical ChemistryBachelor's degree, Medicinal and
-              Pharmaceutical Chemistry 2015 - 20182015 - 2018 Grade: 9.10
-            </div>
-          </div>
-        </div>
-      </div>
+      <div id="experience" className="experience"></div>
 
       <div id="portofolio" className="portofolio">
         <div className="title">Portofolio</div>

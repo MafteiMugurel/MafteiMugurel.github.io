@@ -1,11 +1,23 @@
-.experience {
+.skills {
   background-color: var(--grey);
-  .content {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  &-title {
+    font-weight: bolder;
+  }
+  &-content {
     display: flex;
     flex-flow: wrap;
     justify-content: center;
+    align-items: center;
 
-    .skill {
+    &-skill {
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
+      align-items: center;
       padding: 10px;
       min-width: 140px;
 
@@ -14,7 +26,7 @@
         width: auto;
       }
 
-      .progress-bar {
+      &-progress-bar {
         width: 100%;
         background-color: var(--white);
         padding: 3px;
@@ -25,7 +37,6 @@
           height: 10px;
           background-color: var(--burgundy);
           border-radius: 3px;
-
           transition: width 500ms ease-in-out;
         }
       }
