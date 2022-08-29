@@ -1,73 +1,19 @@
 // import { useState } from "react";
-import "./App.scss";
-import Banner from "./components/banner/Banner";
 import Header from "./components/header/Header";
+import Banner from "./components/banner/Banner";
 import About from "./components/about/About";
+import "./App.scss";
+import Skills from "./components/skills/Skills";
+
 function App() {
   return (
     <div className="App">
       <Header />
       <Banner />
       <About />
+      <Skills />
 
       <div id="experience" className="experience">
-        <div className="title">Known Technologies</div>
-        <div className="content">
-          <div className="skill">
-            {/* <img src="Assets/icons/HTML5.png" alt="HTML5" /> */}
-            <div className="progress-bar">
-              <span className="progress-bar-fill"></span>
-            </div>
-          </div>
-          <div className="skill">
-            {/* <img src="Assets/icons/CSS3.png" alt="" /> */}
-            <div className="progress-bar">
-              <span className="progress-bar-fill"></span>
-            </div>
-          </div>
-          <div className="skill">
-            {/* <img src="Assets/icons/Sass.png" alt="" /> */}
-            <div className="progress-bar">
-              <span className="progress-bar-fill"></span>
-            </div>
-          </div>
-          <div className="skill">
-            {/* <img src="Assets/icons/Javascript.png" alt="" /> */}
-            <div className="progress-bar">
-              <span className="progress-bar-fill"></span>
-            </div>
-          </div>
-          <div className="skill">
-            {/* <img src="Assets/icons/DOMElements.png" alt="" /> */}
-            <div className="progress-bar">
-              <span className="progress-bar-fill"></span>
-            </div>
-          </div>
-          <div className="skill">
-            {/* <img src="Assets/icons/Reactjs.png" alt="" /> */}
-            <div className="progress-bar">
-              <span className="progress-bar-fill"></span>
-            </div>
-          </div>
-          <div className="skill">
-            {/* <img src="Assets/icons/Git.png" alt="" /> */}
-            <div className="progress-bar">
-              <span className="progress-bar-fill"></span>
-            </div>
-          </div>
-          <div className="skill">
-            {/* <img src="Assets/icons/VSCode.png" alt="" /> */}
-            <div className="progress-bar">
-              <span className="progress-bar-fill"></span>
-            </div>
-          </div>
-          <div className="skill">
-            {/* <img src="Assets/icons/Postman.png" alt="" /> */}
-            <div className="progress-bar">
-              <span className="progress-bar-fill"></span>
-            </div>
-          </div>
-        </div>
         <div className="title">Education</div>
         <div className="content">
           <div>
