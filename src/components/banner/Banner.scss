@@ -15,13 +15,22 @@
     flex-flow: column;
     justify-content: center;
     align-items: flex-start;
-    div {
-      padding-bottom: 8px;
-    }
+
     &-name {
-      font-size: 50px;
+      font-size: 3rem;
       font-weight: bolder;
       color: var(--primary);
+    }
+
+    &-sub-name {
+      font-size: 1.5rem;
+      color: var(--white);
+    }
+    div:first-of-type {
+      font-size: 1.5rem;
+    }
+    div:nth-of-type(1n + 1) {
+      padding-bottom: 2vh;
     }
   }
 }

@@ -40,3 +40,10 @@ a {
   background-color: var(--grey);
   border: 2px solid var(--primary);
 }
+.app-button:hover {
+  background-color: var(--black);
+  border-color: var(--peach);
+}
+.app-button:active {
+  border-color: var(--burgundy);
+}

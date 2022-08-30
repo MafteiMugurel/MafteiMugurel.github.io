@@ -5,9 +5,9 @@ const Banner = () => {
   return (
     <div className="banner app-style">
       <div className="banner-left">
-        <div>Hello</div>
+        <div>Hello,</div>
         <div className="banner-left-name">I'm Mugurel</div>
-        <div>Frontend Developer</div>
+        <div className="banner-left-sub-name">Frontend Developer</div>
         <a className="app-button">Hire Me</a>
       </div>
       <img src={IMAGE_ME} alt="image" />

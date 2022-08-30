@@ -1,5 +1,5 @@
 .about {
-  height: 34vh;
+  min-height: 34vh;
   display: flex;
   flex-flow: row;
   align-items: center;
@@ -7,23 +7,23 @@
   justify-content: center;
 
   .title {
-    flex: 1 1 30%;
+    white-space: nowrap;
   }
 
   &-description {
     display: flex;
     flex-flow: column;
+    padding-left: 10%;
 
     &-text {
       font-size: 1.2rem;
-      flex: 1 1 auto;
     }
 
     &-buttons {
       display: flex;
       flex-flow: row;
       justify-content: space-evenly;
-      padding-top: 3vh;
+      padding-top: 4vh;
     }
   }
 }
