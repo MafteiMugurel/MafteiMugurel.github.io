@@ -2,8 +2,8 @@ import "./Recommendations.scss";
 
 const Recommendations = () => {
   return (
-    <div className="recommendations">
-      <div className="recommendations-title">Recommendations</div>
+    <div className="recommendations app-style">
+      <div className="title">Recommendations</div>
       <div className="recommendations-content">
         <div className="recommendations-content-recommendation">
           <div className="recommendations-content-recommendation-text">

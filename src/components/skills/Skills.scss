@@ -4,9 +4,7 @@
   flex-flow: column;
   justify-content: center;
   align-items: center;
-  &-title {
-    font-weight: bolder;
-  }
+
   &-content {
     display: flex;
     flex-flow: wrap;
@@ -28,7 +26,7 @@
 
       &-progress-bar {
         width: 100%;
-        background-color: var(--white);
+        background-color: var(--primary);
         padding: 3px;
         border-radius: 3px;
         box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);

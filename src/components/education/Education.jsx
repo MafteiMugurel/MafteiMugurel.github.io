@@ -4,8 +4,8 @@ import "./Education.scss";
 
 const Education = () => {
   return (
-    <div className="education">
-      <div className="education-title">Education</div>
+    <div className="education app-style">
+      <div className="title">Education</div>
       <div className="education-content">
         <div className="education-content-school">
           <img src={SCOALA_INFORMALA_DE_IT} alt="ScoalaInformaladeIT" />

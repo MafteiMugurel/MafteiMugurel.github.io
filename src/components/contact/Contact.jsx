@@ -2,7 +2,7 @@ import "./Contact.scss";
 
 const Contact = () => {
   return (
-    <div id="contact" className="contact">
+    <div id="contact" className="contact app-style">
       <div className="title">Contact</div>
       <div className="content">
         <a href="mailto: mugurel.maftei95@gmail.com">Send Email</a>

@@ -1,13 +1,12 @@
 .about {
-  height: 30vh;
+  height: 34vh;
   display: flex;
   flex-flow: row;
   align-items: center;
   background-color: var(--black);
-  padding: 0 10vw;
   justify-content: center;
 
-  &-title {
+  .title {
     flex: 1 1 30%;
   }
 
@@ -16,17 +15,15 @@
     flex-flow: column;
 
     &-text {
+      font-size: 1.2rem;
       flex: 1 1 auto;
     }
 
     &-buttons {
       display: flex;
       flex-flow: row;
-      justify-content: center;
+      justify-content: space-evenly;
       padding-top: 3vh;
-      a {
-        padding: 0 3vw;
-      }
     }
   }
 }

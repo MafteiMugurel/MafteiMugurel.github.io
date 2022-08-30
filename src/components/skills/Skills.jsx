@@ -11,8 +11,8 @@ import "./Skills.scss";
 
 const Skills = () => {
   return (
-    <div className="skills">
-      <div className="skills-title">Known Technologies</div>
+    <div id="technologies" className="skills app-style">
+      <div className="title">Known Technologies</div>
 
       <div className="skills-content">
         <div className="skills-content-skill">

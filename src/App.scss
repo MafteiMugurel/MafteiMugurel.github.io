@@ -14,7 +14,29 @@ body {
   color: var(--cream);
   background-color: var(--black);
 }
+.app-style {
+  padding-left: 15%;
+  padding-right: 15%;
+}
+
 a {
   text-decoration: none;
   color: var(--peach);
+}
+
+.title {
+  padding: 20px 0;
+  color: var(--peach);
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.app-button {
+  width: fit-content;
+  border-radius: 5px;
+  padding: 5px 15px;
+  text-transform: uppercase;
+  color: var(--primary);
+  background-color: var(--grey);
+  border: 2px solid var(--primary);
 }
