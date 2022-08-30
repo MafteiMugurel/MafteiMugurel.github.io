@@ -6,19 +6,30 @@
 
   &-content {
     display: flex;
-    flex-flow: column;
+    flex-flow: row;
+    justify-content: space-evenly;
+    width: 100%;
 
     &-school {
       display: flex;
-      flex-flow: row;
+      flex-flow: column;
+      justify-content: flex-start;
       align-items: center;
-      justify-content: center;
 
+      &:first-child {
+        padding-right: 2vw;
+      }
+      &:last-child {
+        padding-left: 2vw;
+      }
       img {
-        width: 10vw;
+        margin-bottom: 2vh;
+        border-radius: 50%;
+        height: 8vw;
       }
       &-text {
-        font-size: 20px;
+        text-align: center;
+        font-size: 1.2rem;
       }
     }
   }
