@@ -15,10 +15,10 @@ const Recommendations = () => {
             necessary resources, he can create great things and has a bright
             future in IT.
           </div>
-          <div className="recommendations-content-recommendation-author">
-            Madalina-Eleonora Gheorghe, Frontend Developer in Deloitte Digital
-            (June 18, 2022)
-          </div>
+        </div>
+        <div className="recommendations-content-recommendation-author">
+          Madalina-Eleonora Gheorghe, Frontend Developer in Deloitte Digital
+          (June 18, 2022)
         </div>
       </div>
     </div>

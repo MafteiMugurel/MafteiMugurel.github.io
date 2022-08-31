@@ -33,12 +33,12 @@ a {
 
 .app-button {
   width: fit-content;
-  border-radius: 5px;
+  border-radius: 4px;
   padding: 5px 15px;
   text-transform: uppercase;
   color: var(--primary);
   background-color: var(--grey);
-  border: 2px solid var(--primary);
+  border: 1px groove var(--primary);
 }
 .app-button:hover {
   background-color: var(--black);

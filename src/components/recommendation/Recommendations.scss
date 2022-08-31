@@ -8,16 +8,31 @@
     display: flex;
     flex-flow: column;
     &-recommendation {
+      background-color: var(--grey);
       display: flex;
       flex-flow: column;
+      border: 1px groove var(--primary);
+      border-radius: 4px;
+      padding: 2vh 2vw;
 
       &-text {
-        font-size: 14px;
+        line-height: 2rem;
+        font-size: 1.2rem;
+
+        &::after,
+        &::before {
+          content: '"';
+          color: var(--primary);
+          padding: 0 0.5vw;
+          font-size: 1.6rem;
+        }
       }
 
       &-author {
+        color: var(--primary);
+        padding: 1vh 0;
         align-self: end;
-        font-size: 18px;
+        font-size: 1rem;
       }
     }
   }
