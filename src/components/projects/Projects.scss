@@ -1,3 +1,12 @@
 .portofolio {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  .content {
+    display: flex;
+    flex-flow: row;
+  }
+
   background-color: var(--grey);
 }
