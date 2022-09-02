@@ -3,15 +3,19 @@
   flex-flow: column;
   justify-content: center;
   align-items: center;
+  padding: 1vh 1vw;
+  border-radius: 6px;
+  background-color: var(--black);
+  margin: 3px;
+  flex: 0 1 29%;
   &-image {
-    width: 300px;
     height: 300px;
+    width: -webkit-fill-available;
+    min-height: 20vh;
     background-size: cover;
     background-position: center;
   }
   &-name {
     font-size: 1.2rem;
-  }
-  &-technologies {
   }
 }

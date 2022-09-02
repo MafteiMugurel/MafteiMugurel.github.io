@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import "./Projects.scss";
 import Project from "./project/Project";
+import "./Projects.scss";
 
 const Projects = () => {
   const [projectsData, setProjectsData] = useState([
@@ -439,20 +439,20 @@ const Projects = () => {
   ]);
 
   useEffect(() => {
-    // fetch(
-    //   "https://api.github.com/users/MafteiMugurel/repos?type=public&sort=pushed&per_page=9"
-    // )
-    //   .then((response) => {
-    //     return response.json();
-    //   })
-    //   .then((projects) => {
-    //     console.log(projects);
-    //     setProjectsData(projects);
-    //   });
+    fetch(
+      "https://api.github.com/users/MafteiMugurel/repos?type=public&sort=pushed&per_page=9"
+    )
+      .then((response) => {
+        return response.json();
+      })
+      .then((projects) => {
+        console.log(projects);
+        setProjectsData(projects);
+      });
   }, []);
 
   return (
-    <div id="portofolio" className="portofolio app-styles">
+    <div id="portofolio" className="portofolio app-style">
       <div className="title">Portofolio</div>
       <div className="content">
         {projectsData.map((project) => {

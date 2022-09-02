@@ -1,5 +1,5 @@
-import "./Project.scss";
 import { useEffect, useState } from "react";
+import "./Project.scss";
 
 const Project = ({ projectInfo }) => {
   const [imageUrl, setImageUrl] = useState("");

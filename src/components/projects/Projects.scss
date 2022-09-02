@@ -1,12 +1,15 @@
 .portofolio {
   display: flex;
-  flex-flow: column;
+  flex-flow: wrap;
   justify-content: center;
   align-items: center;
+  display: flex;
+  background-color: var(--grey);
   .content {
     display: flex;
-    flex-flow: row;
+    flex-flow: wrap;
+    width: 100%;
+    justify-content: center;
+    padding-bottom: 2vh;
   }
-
-  background-color: var(--grey);
 }
