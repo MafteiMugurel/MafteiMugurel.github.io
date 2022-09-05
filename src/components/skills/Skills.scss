@@ -16,7 +16,7 @@
       flex-flow: column;
       justify-content: center;
       align-items: center;
-      padding: 10px;
+      padding: 20px;
       min-width: 140px;
 
       img {
@@ -26,7 +26,7 @@
 
       &-progress-bar {
         width: 100%;
-        background-color: var(--primary);
+        background-color: var(--black);
         padding: 1px;
         margin-top: 2vh;
         border-radius: 3px;
@@ -34,9 +34,8 @@
         &-fill {
           display: block;
           height: 10px;
-          background-color: var(--burgundy);
+          background-color: var(--primary);
           border-radius: 4px;
-          transition: width 500ms ease-in-out;
         }
       }
     }

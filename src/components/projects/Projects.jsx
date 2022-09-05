@@ -440,7 +440,7 @@ const Projects = () => {
 
   useEffect(() => {
     fetch(
-      "https://api.github.com/users/MafteiMugurel/repos?type=public&sort=pushed&per_page=9"
+      "https://api.github.com/users/MafteiMugurel/repos?type=public&sort=pushed&per_page=6"
     )
       .then((response) => {
         return response.json();
@@ -456,7 +456,7 @@ const Projects = () => {
       <div className="title">Portofolio</div>
       <div className="content">
         {projectsData.map((project) => {
-          return <Project projectInfo={project} />;
+          return <Project projectInfo={project} key={project.id} />;
         })}
       </div>
     </div>

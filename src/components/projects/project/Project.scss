@@ -8,6 +8,7 @@
   background-color: var(--black);
   margin: 3px;
   flex: 0 1 29%;
+
   &-image {
     height: 300px;
     width: -webkit-fill-available;
@@ -15,7 +16,9 @@
     background-size: cover;
     background-position: center;
   }
+
   &-name {
+    color: var(--peach);
     font-size: 1.2rem;
   }
 }
