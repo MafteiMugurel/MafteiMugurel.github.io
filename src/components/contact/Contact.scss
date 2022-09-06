@@ -1,19 +1,21 @@
 .contact {
   display: flex;
   flex-flow: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   background-color: var(--grey);
+
   .content {
     display: flex;
     flex-flow: row;
     align-items: flex-end;
     padding-bottom: 2vh;
+
     a {
       display: flex;
       flex-flow: column;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
 
       &:nth-of-type(1n + 2) {
         margin-left: 6vw;

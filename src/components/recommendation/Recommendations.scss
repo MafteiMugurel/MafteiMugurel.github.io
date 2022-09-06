@@ -1,19 +1,20 @@
 .recommendations {
   display: flex;
   flex-flow: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 
   &-content {
     display: flex;
     flex-flow: column;
+
     &-recommendation {
-      background-color: var(--grey);
       display: flex;
       flex-flow: column;
-      border: 1px groove var(--primary);
       border-radius: 4px;
       padding: 2vh 2vw;
+      border: 1px groove var(--primary);
+      background-color: var(--grey);
 
       &-text {
         line-height: 2rem;
@@ -22,17 +23,17 @@
         &::after,
         &::before {
           content: '"';
-          color: var(--primary);
           padding: 0 0.5vw;
           font-size: 1.6rem;
+          color: var(--primary);
         }
       }
 
       &-author {
-        color: var(--primary);
-        padding: 1vh 0;
         align-self: end;
+        padding: 1vh 0;
         font-size: 1rem;
+        color: var(--primary);
       }
     }
   }

@@ -9,20 +9,18 @@ const Contact = () => {
       <div className="title">Contact</div>
       <div className="content">
         <a href="mailto: mugurel.maftei95@gmail.com">
-          <img src={GMAIL} alt="" />
+          <img src={GMAIL} alt="GMAIL" />
           Send Email
         </a>
-
         <a
           href="https://www.linkedin.com/in/maftei-mugurel-a53b891a8/"
           target="_blank"
         >
-          <img src={LINKEDIN} alt="" />
+          <img src={LINKEDIN} alt="LINKEDIN" />
           LinkedIn
         </a>
-
         <a href="https://github.com/MafteiMugurel" target="_blank">
-          <img src={GITHUB} alt="" />
+          <img src={GITHUB} alt="GITHUB" />
           GitHub
         </a>
       </div>

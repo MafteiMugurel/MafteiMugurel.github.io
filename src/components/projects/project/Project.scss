@@ -1,24 +1,24 @@
 .project {
   display: flex;
   flex-flow: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  flex: 0 1 29%;
   padding: 1vh 1vw;
   border-radius: 6px;
-  background-color: var(--black);
   margin: 3px;
-  flex: 0 1 29%;
+  background-color: var(--black);
 
   &-image {
-    height: 300px;
-    width: -webkit-fill-available;
-    min-height: 20vh;
     background-size: cover;
     background-position: center;
+    height: 300px;
+    min-height: 20vh;
+    width: -webkit-fill-available;
   }
 
   &-name {
-    color: var(--peach);
     font-size: 1.2rem;
+    color: var(--peach);
   }
 }

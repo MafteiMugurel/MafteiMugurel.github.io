@@ -1,10 +1,10 @@
 .about {
-  min-height: 34vh;
   display: flex;
   flex-flow: row;
   align-items: center;
-  background-color: var(--black);
   justify-content: center;
+  background-color: var(--black);
+  min-height: 34vh;
 
   .title {
     white-space: nowrap;
@@ -16,8 +16,8 @@
     padding-left: 10%;
 
     &-text {
-      line-height: 2rem;
       font-size: 1.2rem;
+      line-height: 2rem;
     }
 
     &-buttons {

@@ -8,7 +8,6 @@ const Header = () => {
       <div className="nav-bar-list">
         <a href="#about">About</a>
         <a href="#technologies">Technologies</a>
-        {/* <a href="#experience">Experience</a> */}
         <a href="#portofolio">Portofolio</a>
         <a href="#contact">Contact</a>
         <a href={CVFile} target="_blank">

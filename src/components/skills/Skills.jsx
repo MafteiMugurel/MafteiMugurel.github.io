@@ -13,10 +13,10 @@ const Skills = () => {
     { name: "VSCode", imgSrc: "VSCode", level: 40 },
     { name: "DOMElements", imgSrc: "DOMElements", level: 20 },
   ];
+
   return (
     <div id="technologies" className="skills app-style">
       <div className="title">Known Technologies</div>
-
       <div className="skills-content">
         {skillsList.map((skill) => {
           return <Skill skillInfo={skill} key={skill.name} />;

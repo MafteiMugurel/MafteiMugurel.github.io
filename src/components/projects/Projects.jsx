@@ -446,7 +446,6 @@ const Projects = () => {
         return response.json();
       })
       .then((projects) => {
-        console.log(projects);
         setProjectsData(projects);
       });
   }, []);
@@ -455,9 +454,10 @@ const Projects = () => {
     <div id="portofolio" className="portofolio app-style">
       <div className="title">Portofolio</div>
       <div className="content">
-        {projectsData.map((project) => {
-          return <Project projectInfo={project} key={project.id} />;
-        })}
+        {projectsData &&
+          projectsData.map((project) => {
+            return <Project projectInfo={project} key={project.id} />;
+          })}
       </div>
     </div>
   );

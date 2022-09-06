@@ -1,8 +1,8 @@
 .education {
   display: flex;
   flex-flow: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   padding-bottom: 2vh;
 
   &-content {
@@ -14,26 +14,29 @@
     &-school {
       display: flex;
       flex-flow: column;
-      justify-content: flex-start;
       align-items: center;
+      justify-content: flex-start;
 
       img {
-        border-radius: 50%;
         height: 8vh;
+        border-radius: 50%;
       }
 
       &:first-child {
         padding-right: 2vw;
       }
+
       &:last-child {
         padding-left: 2vw;
       }
+
       &-text {
         text-align: center;
 
         div {
           padding-top: 0.5vh;
         }
+
         div:first-child,
         div:last-child {
           color: var(--cream);
