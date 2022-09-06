@@ -5,9 +5,9 @@ const Project = ({ projectInfo }) => {
   const [imageUrl, setImageUrl] = useState("");
 
   useEffect(() => {
-    import(`../../../assets/projects/${projectInfo.id}.png`).then((image) => {
-      setImageUrl(`url('${image.default}')`);
-    });
+    setImageUrl(
+      `url('https://raw.githubusercontent.com/${projectInfo.full_name}/main/demo.png')`
+    );
   }, []);
 
   return (
@@ -19,7 +19,7 @@ const Project = ({ projectInfo }) => {
         }}
       ></div>
       <div className="project-name">{projectInfo.name}</div>
-      <div className="project-technologies">nume limbaje</div>
+      {/* <div className="project-technologies">nume limbaje</div> */}
       <a href={projectInfo.html_url} className="app-button" target="_blank">
         View project
       </a>
