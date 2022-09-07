@@ -5,11 +5,14 @@
   justify-content: center;
   background-color: var(--grey);
 
-  .content {
+  &-content {
     display: flex;
     flex-flow: wrap;
     justify-content: center;
     width: 100%;
-    padding-bottom: 2vh;
+  }
+
+  &-button {
+    padding: 2vh;
   }
 }

@@ -446,18 +446,32 @@ const Projects = () => {
         return response.json();
       })
       .then((projects) => {
-        setProjectsData(projects);
+        if (projects) {
+          setProjectsData(projects);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
       });
   }, []);
 
   return (
     <div id="portofolio" className="portofolio app-style">
       <div className="title">Portofolio</div>
-      <div className="content">
+      <div className="portofolio-content">
         {projectsData &&
           projectsData.map((project) => {
             return <Project projectInfo={project} key={project.id} />;
           })}
+      </div>
+      <div className="portofolio-button">
+        <a
+          className="app-button"
+          href="https://github.com/MafteiMugurel"
+          target="_blank"
+        >
+          View more on GitHub
+        </a>
       </div>
     </div>
   );

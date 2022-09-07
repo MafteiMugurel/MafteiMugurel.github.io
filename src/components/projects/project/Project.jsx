@@ -31,7 +31,6 @@ const Project = ({ projectInfo }) => {
         }}
       ></div>
       <div className="project-name">{projectInfo.name}</div>
-      {/* <div className="project-technologies">{languagesData}</div> */}
       <a href={projectInfo.html_url} className="app-button" target="_blank">
         View project
       </a>
