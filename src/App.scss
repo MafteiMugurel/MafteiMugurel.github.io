@@ -14,9 +14,8 @@ body {
   color: var(--cream);
   background-color: var(--black);
 }
+
 .app-style {
-  // padding-left: 15%;
-  // padding-right: 15%;
   padding: 0 15%;
 }
 
@@ -41,10 +40,24 @@ a {
   background-color: var(--grey);
   border: 1px groove var(--primary);
 }
+
 .app-button:hover {
   background-color: var(--black);
   border-color: var(--peach);
 }
+
 .app-button:active {
   border-color: var(--burgundy);
+}
+
+@media only screen and (max-width: 992px) {
+  .app-style {
+    padding: 0 6%;
+  }
+  .title {
+    font-size: 1.5rem;
+  }
+  .app-button {
+    font-size: 0.8rem;
+  }
 }

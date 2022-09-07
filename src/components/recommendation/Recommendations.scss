@@ -38,3 +38,10 @@
     }
   }
 }
+
+@media only screen and (max-width: 768px) {
+  .recommendations-content-recommendation-text {
+    line-height: 1.5rem;
+    font-size: 1rem;
+  }
+}
