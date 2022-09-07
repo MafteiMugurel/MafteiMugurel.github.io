@@ -56,3 +56,12 @@
     }
   }
 }
+
+@media only screen and (max-width: 768px) {
+  .education-content {
+    flex-flow: column;
+    &-school {
+      padding: 1vh 0;
+    }
+  }
+}
