@@ -14,6 +14,7 @@
     display: flex;
     flex-flow: column;
     padding-left: 10%;
+    padding-bottom: 2vh;
 
     &-text {
       font-size: 1.2rem;
@@ -32,6 +33,7 @@
 @media only screen and (max-width: 768px) {
   .about {
     flex-flow: column;
+
     &-description-text {
       line-height: 1.5rem;
       font-size: 1rem;
