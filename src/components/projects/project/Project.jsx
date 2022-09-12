@@ -3,15 +3,17 @@ import "./Project.scss";
 
 const Project = ({ projectInfo }) => {
   const [imageUrl, setImageUrl] = useState("");
-  const [languagesData, setLanguagesData] = useState({
-    HTML: 59254,
-    CSS: 15451,
-  });
+  // TODO
+  // const [languagesData, setLanguagesData] = useState({
+  //   HTML: 59254,
+  //   CSS: 15451,
+  // });
 
   useEffect(() => {
     setImageUrl(
       `url('https://raw.githubusercontent.com/${projectInfo.full_name}/main/demo.png')`
     );
+    // TODO
     // fetch(projectInfo.languages_url)
     //   .then((response) => {
     //     return response.json();

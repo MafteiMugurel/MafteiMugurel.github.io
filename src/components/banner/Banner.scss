@@ -43,12 +43,15 @@
     div:first-of-type {
       font-size: 1rem;
     }
+
     div:nth-of-type(1n + 1) {
       padding-bottom: 1.5vh;
     }
+
     &-left-name {
       font-size: 1.5rem;
     }
+
     &-left-sub-name {
       font-size: 1rem;
     }

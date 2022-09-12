@@ -1,4 +1,5 @@
 import CVFile from "../../assets/CV.pdf";
+import Toggle from "./toggle/Toggle";
 import "./Header.scss";
 
 const Header = () => {
@@ -14,6 +15,7 @@ const Header = () => {
           Resume
         </a>
       </div>
+      <Toggle />
     </div>
   );
 };

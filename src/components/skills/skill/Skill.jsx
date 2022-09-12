@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "./Skill.scss";
+
 const Skill = ({ skillInfo }) => {
   const [imageUrl, setImageUrl] = useState("");
 
@@ -22,4 +22,5 @@ const Skill = ({ skillInfo }) => {
     </div>
   );
 };
+
 export default Skill;

@@ -1,6 +1,5 @@
 :root {
   --primary: #ffb633;
-  --secondary: #0094c2;
   --white: #ffffff;
   --black: #2c2c2c;
   --grey: #313131;
@@ -60,4 +59,8 @@ a {
   .app-button {
     font-size: 0.8rem;
   }
+}
+
+.white-content {
+  background-color: var(--white);
 }

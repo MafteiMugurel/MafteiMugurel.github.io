@@ -6,6 +6,10 @@
   height: 6vh;
   background-color: var(--black);
 
+  &-list {
+    align-items: center;
+  }
+
   a:hover {
     color: var(--burgundy);
   }
