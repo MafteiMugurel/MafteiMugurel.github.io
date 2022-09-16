@@ -30,6 +30,15 @@ a {
   font-size: 2rem;
 }
 
+.app-imput {
+  width: fit-content;
+  border-radius: 4px;
+  padding: 5px 15px;
+  color: var(--primary);
+  background-color: var(--grey);
+  border: 1px groove var(--primary);
+}
+
 .app-button {
   width: fit-content;
   border-radius: 4px;

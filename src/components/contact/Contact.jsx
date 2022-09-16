@@ -1,12 +1,16 @@
 import GMAIL from "../../assets/icons/Gmail.png";
 import GITHUB from "../../assets/icons/GitHub.png";
 import LINKEDIN from "../../assets/icons/LinkedIn.png";
+import ContactForm from "./contact-form/ContactForm";
 import "./Contact.scss";
 
 const Contact = () => {
   return (
     <div id="contact" className="contact app-style">
       <div className="title">Contact</div>
+      <div className="contact-form">
+        <ContactForm />
+      </div>
       <div className="content">
         <a href="mailto: mugurel.maftei95@gmail.com">
           <img src={GMAIL} alt="GMAIL" />
