@@ -1,13 +1,15 @@
 import React, { useState } from "react";
-import "./ContactForm.scss";
 import emailjs from "@emailjs/browser";
+import "./ContactForm.scss";
 
 const ContactForm = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const [emailSent, setEmailSent] = useState(false);
-
+  const [emailSent, setEmailSent] = useState("");
+  const [errorName, setErrorName] = useState(null);
+  const [errorEmail, setErrorEmail] = useState(null);
+  const [errorMessage, setErrorMessage] = useState(null);
   const submit = () => {
     if (name && email && message) {
       const serviceId = "service_jq9adsj";
@@ -27,16 +29,43 @@ const ContactForm = () => {
       setName("");
       setEmail("");
       setMessage("");
-      setEmailSent(true);
+      setEmailSent(
+        "Thank you for your message, we will be in touch in no time!"
+      );
     } else {
       alert("Please fill in all fields.");
     }
   };
 
   const isValidEmail = (email) => {
-    const regex =
-      /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return regex.test(String(email).toLowerCase());
+    return /\S+@\S+\.\S+/.test(email);
+  };
+
+  const handleChangeName = (event) => {
+    if (!event.target.value) {
+      setErrorName("Name can not be empty");
+    } else {
+      setErrorName(null);
+    }
+    setName(event.target.value);
+  };
+
+  const handleChangeEmail = (event) => {
+    if (event.target.value && !isValidEmail(event.target.value)) {
+      setErrorEmail("Email is invalid");
+    } else {
+      setErrorEmail(null);
+    }
+    setEmail(event.target.value);
+  };
+
+  const handleChangeMessage = (event) => {
+    if (!event.target.value) {
+      setErrorMessage("Message can not be empty");
+    } else {
+      setErrorMessage(null);
+    }
+    setMessage(event.target.value);
   };
 
   return (
@@ -46,27 +75,32 @@ const ContactForm = () => {
         type="text"
         placeholder="Your Name"
         value={name}
-        onChange={(e) => setName(e.target.value)}
+        onChange={handleChangeName}
       />
+      {errorName && <h2 style={{ color: "red" }}>{errorName}</h2>}
       <input
         className="contact-form-email app-imput"
         type="email"
         placeholder="Your email address"
         value={email}
-        onChange={(e) => setEmail(e.target.value)}
+        onChange={handleChangeEmail}
       />
+      {errorEmail && <h2 style={{ color: "red" }}>{errorEmail}</h2>}
       <textarea
         className="contact-form-textarea app-imput"
         placeholder="Your message"
         value={message}
-        onChange={(e) => setMessage(e.target.value)}
+        onChange={handleChangeMessage}
       ></textarea>
-      <button className="contact-form-button app-button" onClick={submit}>
+      {errorMessage && <h2 style={{ color: "red" }}>{errorMessage}</h2>}
+      <button
+        className="contact-form-button app-button"
+        onClick={errorName || errorEmail || errorMessage ? null : submit}
+        disabled={errorName || errorEmail || errorMessage}
+      >
         Send Message
       </button>
-      <span className={emailSent ? "visible" : null}>
-        Thank you for your message, we will be in touch in no time!
-      </span>
+      <span>{emailSent}</span>
     </div>
   );
 };

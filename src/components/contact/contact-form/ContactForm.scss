@@ -4,18 +4,18 @@
   align-items: center;
   justify-content: center;
 
-  &-name {
-    min-width: 20vw;
-    height: 2vh;
-  }
+  &-name,
   &-email {
     min-width: 20vw;
     height: 2vh;
+    text-align: center;
   }
+
   &-textarea {
     min-width: 20vw;
     height: 8vh;
   }
+
   & * {
     margin-bottom: 1vh;
   }

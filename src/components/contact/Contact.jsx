@@ -8,9 +8,7 @@ const Contact = () => {
   return (
     <div id="contact" className="contact app-style">
       <div className="title">Contact</div>
-      <div className="contact-form">
-        <ContactForm />
-      </div>
+      <ContactForm />
       <div className="content">
         <a href="mailto: mugurel.maftei95@gmail.com">
           <img src={GMAIL} alt="GMAIL" />
