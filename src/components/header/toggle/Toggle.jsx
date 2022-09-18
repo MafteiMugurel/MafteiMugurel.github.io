@@ -17,7 +17,7 @@ const Toggle = () => {
               changeTheme(darkMode ? themes.light : themes.dark);
             }}
           />
-          <label for="switch"></label>
+          <label htmlFor="switch"></label>
         </div>
       )}
     </ThemeContext.Consumer>

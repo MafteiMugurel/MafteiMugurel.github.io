@@ -3,20 +3,46 @@
   flex-flow: column;
   align-items: center;
   justify-content: center;
+  width: 35vw;
 
-  &-name,
-  &-email {
-    min-width: 20vw;
-    height: 2vh;
-    text-align: center;
+  & div:nth-child(1n + 1) {
+    margin-bottom: 1.5vh;
   }
+  &-context {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
 
-  &-textarea {
-    min-width: 20vw;
-    height: 8vh;
-  }
+    &-name {
+      min-width: 20vw;
+      height: 2vh;
+      text-align: center;
+    }
 
-  & * {
-    margin-bottom: 1vh;
+    &-email {
+      min-width: 20vw;
+      height: 2vh;
+      text-align: center;
+      text-transform: lowercase;
+    }
+
+    &-textarea {
+      min-width: 20vw;
+      height: 8vh;
+    }
+    span {
+      display: flex;
+
+      img {
+        margin: 0 0 0 1vw;
+        width: auto;
+        height: 2vh;
+        border-radius: 6px;
+        border: 1px groove var(--burgundy);
+        background-color: var(--burgundy);
+      }
+    }
   }
 }

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
+import ErrorIcon from "../../../assets/icons/ErrorIcon.png";
 import "./ContactForm.scss";
 
 const ContactForm = () => {
@@ -43,7 +44,7 @@ const ContactForm = () => {
 
   const handleChangeName = (event) => {
     if (!event.target.value) {
-      setErrorName("Name can not be empty");
+      setErrorName(<img src={ErrorIcon} />);
     } else {
       setErrorName(null);
     }
@@ -52,7 +53,7 @@ const ContactForm = () => {
 
   const handleChangeEmail = (event) => {
     if (event.target.value && !isValidEmail(event.target.value)) {
-      setErrorEmail("Email is invalid");
+      setErrorEmail(<img src={ErrorIcon} />);
     } else {
       setErrorEmail(null);
     }
@@ -61,7 +62,7 @@ const ContactForm = () => {
 
   const handleChangeMessage = (event) => {
     if (!event.target.value) {
-      setErrorMessage("Message can not be empty");
+      setErrorMessage(<img src={ErrorIcon} />);
     } else {
       setErrorMessage(null);
     }
@@ -70,37 +71,48 @@ const ContactForm = () => {
 
   return (
     <div id="contact-form" className="contact-form">
-      <input
-        className="contact-form-name app-imput"
-        type="text"
-        placeholder="Your Name"
-        value={name}
-        onChange={handleChangeName}
-      />
-      {errorName && <h2 style={{ color: "red" }}>{errorName}</h2>}
-      <input
-        className="contact-form-email app-imput"
-        type="email"
-        placeholder="Your email address"
-        value={email}
-        onChange={handleChangeEmail}
-      />
-      {errorEmail && <h2 style={{ color: "red" }}>{errorEmail}</h2>}
-      <textarea
-        className="contact-form-textarea app-imput"
-        placeholder="Your message"
-        value={message}
-        onChange={handleChangeMessage}
-      ></textarea>
-      {errorMessage && <h2 style={{ color: "red" }}>{errorMessage}</h2>}
-      <button
-        className="contact-form-button app-button"
-        onClick={errorName || errorEmail || errorMessage ? null : submit}
-        disabled={errorName || errorEmail || errorMessage}
-      >
-        Send Message
-      </button>
-      <span>{emailSent}</span>
+      <div className="contact-form-context">
+        <input
+          className="contact-form-context-name app-imput"
+          type="text"
+          placeholder="Your Name"
+          value={name}
+          onChange={handleChangeName}
+        />
+        {errorName && <span>{errorName}</span>}
+      </div>
+
+      <div className="contact-form-context">
+        <input
+          className="contact-form-context-email app-imput"
+          type="email"
+          placeholder="Your email address"
+          value={email}
+          onChange={handleChangeEmail}
+        />
+        {errorEmail && <span>{errorEmail}</span>}
+      </div>
+
+      <div className="contact-form-context">
+        <textarea
+          className="contact-form-context-textarea app-imput"
+          placeholder="Your message"
+          value={message}
+          onChange={handleChangeMessage}
+        ></textarea>
+        {errorMessage && <span>{errorMessage}</span>}
+      </div>
+
+      <div className="contact-form-context">
+        <button
+          className="contact-form-button app-button"
+          onClick={errorName || errorEmail || errorMessage ? null : submit}
+          disabled={errorName || errorEmail || errorMessage}
+        >
+          Send Message
+        </button>
+      </div>
+      <div className="contact-form-context">{emailSent}</div>
     </div>
   );
 };
