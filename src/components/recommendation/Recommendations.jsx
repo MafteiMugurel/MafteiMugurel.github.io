@@ -17,8 +17,24 @@ const Recommendations = () => {
           </div>
         </div>
         <div className="recommendations-content-recommendation-author">
-          Madalina-Eleonora Gheorghe, Frontend Developer in Deloitte Digital
+          Madalina-Eleonora Gheorghe, Frontend Developer at Deloitte Digital
           (June 18, 2022)
+        </div>
+      </div>
+      <div className="recommendations-content">
+        <div className="recommendations-content-recommendation">
+          <div className="recommendations-content-recommendation-text">
+            Mugurel is very ambitions and I could see him grow a lot in the last
+            couple of months. He treated all of his projects seriously and even
+            when things got challenging he did not give up but tried to solve
+            the issues himself. He is not afraid to ask for help and also had a
+            positive attitude when receiving feedback on his code. He still has
+            a long way to go but he’s enthusiasm and eagerness to evolve are
+            clear indicators to me that he will do great wherever he goes.
+          </div>
+        </div>
+        <div className="recommendations-content-recommendation-author">
+          Narcisa-Elena Badea, Frontend Developer at IBM (September 19, 2022)
         </div>
       </div>
     </div>
