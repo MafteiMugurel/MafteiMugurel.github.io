@@ -9,10 +9,34 @@ const Project = ({ projectInfo }) => {
   //   CSS: 15451,
   // });
 
+  const checkImageURL = (url) => {
+    return fetch(url, { method: "HEAD" }).then((res) => {
+      return res;
+    });
+  };
+
   useEffect(() => {
-    setImageUrl(
-      `url('https://raw.githubusercontent.com/${projectInfo.full_name}/main/demo.png')`
+    // setImageUrl(
+    //   `url('https://raw.githubusercontent.com/${projectInfo.full_name}/main/demo.png')`
+    // );
+
+    const main = checkImageURL(
+      `https://raw.githubusercontent.com/${projectInfo.full_name}/main/demo.png`
     );
+    const master = checkImageURL(
+      `https://raw.githubusercontent.com/${projectInfo.full_name}/master/demo.png`
+    );
+
+    Promise.all([main, master])
+      .then((results) => {
+        const filteredResult = results.find((item) => item.ok);
+        filteredResult
+          ? setImageUrl(`url(${filteredResult.url})`)
+          : setImageUrl(`url(${IMAGE_NOT_FOUND})`);
+        // TODO
+        console.clear();
+      })
+      .catch((err) => setImageUrl(`url(${IMAGE_NOT_FOUND})`));
     // TODO
     // fetch(projectInfo.languages_url)
     //   .then((response) => {
