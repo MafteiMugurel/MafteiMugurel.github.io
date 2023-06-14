@@ -7,12 +7,11 @@ const About = () => {
       <div className="title">About Me</div>
       <div className="about-description">
         <div className="about-description-text">
-          I am Mugurel and I gathered my passions in Web Development. I'm a
-          Bucharest-based future software engineer who wants to join the
-          Frontend field. Currently learning HTML, CSS, JavaScript and React to
-          start my career in IT. I am creative and my analytical thinking is
-          helping me to find solutions, continuously learning how to increase my
-          skills both technical and soft.
+          I am a Frontend Developer with 1 year experience working on personal
+          projects with React, JavaScript, HTML and CSS. I have a proactive
+          attitude, being a problem-solver and having an impressive
+          self-motivation to learn and evolve in this field. My perseverance is
+          always present to help me going through complicate situations.
         </div>
         <div className="about-description-buttons">
           <a className="app-button" href="#contact">
