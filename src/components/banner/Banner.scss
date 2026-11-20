@@ -1,59 +1,298 @@
-.banner {
-  display: flex;
-  flex-flow: row;
-  justify-content: space-between;
-  background: linear-gradient(
-    to right,
-    var(--grey) 73%,
-    var(--primary) 73%,
-    var(--primary) 100%
-  );
-  height: 60vh;
+.hero {
+  position: relative;
+  padding: 64px 0 120px;
+  overflow: hidden;
 
-  &-left {
+  &-grid {
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(var(--bg-grid) 1px, transparent 1px),
+      linear-gradient(90deg, var(--bg-grid) 1px, transparent 1px);
+    background-size: 44px 44px;
+    mask-image: radial-gradient(ellipse at 70% 40%, #000 30%, transparent 75%);
+    -webkit-mask-image: radial-gradient(
+      ellipse at 70% 40%,
+      #000 30%,
+      transparent 75%
+    );
+    pointer-events: none;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 520px;
+      height: 520px;
+      right: -120px;
+      top: -80px;
+      border-radius: 50%;
+      background: radial-gradient(var(--accent-soft), transparent 70%);
+    }
+  }
+
+  &-inner {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    gap: 56px;
+    align-items: center;
+  }
+
+  &-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    color: var(--accent);
+    background-color: var(--accent-soft);
+    border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
+    backdrop-filter: blur(4px);
+
+    &-dot {
+      flex-shrink: 0;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: var(--accent);
+      animation: pulse 2s infinite;
+    }
+  }
+
+  h1 {
+    margin: 22px 0 12px;
+    font-size: clamp(2.2rem, 5.5vw, 3.8rem);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    font-weight: 800;
+    overflow-wrap: anywhere;
+  }
+
+  &-role {
+    min-height: 1.7em;
+    margin: 0 0 20px;
+    font-size: clamp(0.95rem, 2.2vw, 1.15rem);
+    color: var(--accent-2);
+    white-space: nowrap;
+
+    &-prefix {
+      color: var(--accent);
+    }
+  }
+
+  &-lead {
+    margin: 0 0 32px;
+    max-width: 560px;
+    font-size: 1.08rem;
+    color: var(--muted);
+  }
+
+  &-actions {
     display: flex;
-    flex-flow: column;
-    align-items: flex-start;
-    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
 
-    &-name {
-      font-weight: bolder;
-      font-size: 3rem;
-      color: var(--primary);
+  &-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px 22px;
+    margin-top: 32px;
+    font-size: 0.85rem;
+    color: var(--muted);
+
+    span,
+    a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--muted);
     }
 
-    &-sub-name {
-      font-size: 1.5rem;
-      color: var(--white);
+    a:hover {
+      color: var(--accent);
+    }
+  }
+
+  &-terminal {
+    min-width: 0;
+
+    .term {
+      height: clamp(300px, 46vh, 380px);
     }
 
-    div:first-of-type {
-      font-size: 1.5rem;
-    }
+    &-hint {
+      margin-top: 12px;
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-align: center;
 
-    div:nth-of-type(1n + 1) {
-      padding-bottom: 2vh;
+      code {
+        color: var(--accent);
+        font-family: inherit;
+        white-space: nowrap;
+      }
+    }
+  }
+
+  &-scroll {
+    position: absolute;
+    left: 50%;
+    bottom: 28px;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.7rem;
+    color: var(--muted);
+    letter-spacing: 0.15em;
+
+    span {
+      width: 2px;
+      height: 28px;
+      border-radius: 2px;
+      background: linear-gradient(var(--accent), transparent);
+      animation: scroll-hint 1.8s ease-in-out infinite;
     }
   }
 }
 
-@media only screen and (max-width: 768px) {
-  .banner {
-    max-height: 40vh;
-    div:first-of-type {
-      font-size: 1rem;
+// Glitch effect on the surname (hover, plus one run on load)
+.glitch {
+  position: relative;
+  display: inline-block;
+  color: var(--accent);
+
+  &::before,
+  &::after {
+    content: attr(data-text);
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  &::before {
+    color: var(--accent-2);
+    animation: glitch-a 0.9s steps(2) 1.2s 1;
+  }
+
+  &::after {
+    color: #ff5f87;
+    animation: glitch-b 0.9s steps(2) 1.2s 1;
+  }
+
+  &:hover::before {
+    animation: glitch-a 0.6s steps(2) infinite;
+  }
+  &:hover::after {
+    animation: glitch-b 0.6s steps(2) infinite;
+  }
+}
+
+@keyframes glitch-a {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.85;
+    transform: translate(-3px, -1px);
+    clip-path: inset(10% 0 55% 0);
+  }
+  40% {
+    opacity: 0.85;
+    transform: translate(3px, 1px);
+    clip-path: inset(60% 0 10% 0);
+  }
+  70% {
+    opacity: 0.85;
+    transform: translate(-2px, 0);
+    clip-path: inset(35% 0 35% 0);
+  }
+}
+
+@keyframes glitch-b {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.75;
+    transform: translate(3px, 1px);
+    clip-path: inset(50% 0 20% 0);
+  }
+  55% {
+    opacity: 0.75;
+    transform: translate(-3px, -1px);
+    clip-path: inset(5% 0 70% 0);
+  }
+  85% {
+    opacity: 0.75;
+    transform: translate(2px, 0);
+    clip-path: inset(75% 0 5% 0);
+  }
+}
+
+@keyframes scroll-hint {
+  0% {
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  50% {
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+  51% {
+    transform-origin: bottom;
+  }
+  100% {
+    transform: scaleY(0);
+    transform-origin: bottom;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 60%, transparent);
+  }
+  70% {
+    box-shadow: 0 0 0 10px transparent;
+  }
+  100% {
+    box-shadow: 0 0 0 0 transparent;
+  }
+}
+
+@media (max-width: 960px) {
+  .hero {
+    padding: 40px 0 96px;
+
+    &-inner {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 40px;
     }
 
-    div:nth-of-type(1n + 1) {
-      padding-bottom: 1.5vh;
+    &-terminal .term {
+      height: 340px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    &-actions .btn {
+      flex: 1 1 auto;
+      justify-content: center;
     }
 
-    &-left-name {
-      font-size: 1.5rem;
+    &-terminal .term {
+      height: 320px;
     }
 
-    &-left-sub-name {
-      font-size: 1rem;
+    &-scroll {
+      display: none;
     }
   }
 }

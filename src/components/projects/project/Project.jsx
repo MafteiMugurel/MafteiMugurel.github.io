@@ -1,66 +1,36 @@
-import { useEffect, useState } from "react";
+import Icon from "../../icons/Icon";
 import "./Project.scss";
 
+// GitHub's linguist colours
+const languageColors = {
+  Java: "#b07219",
+  "C#": "#178600",
+  TypeScript: "#3178c6",
+  "C++": "#f34b7d",
+};
+
 const Project = ({ projectInfo }) => {
-  const [imageUrl, setImageUrl] = useState("");
-  // TODO
-  // const [languagesData, setLanguagesData] = useState({
-  //   HTML: 59254,
-  //   CSS: 15451,
-  // });
-
-  const checkImageURL = (url) => {
-    return fetch(url, { method: "HEAD" }).then((res) => {
-      return res;
-    });
-  };
-
-  useEffect(() => {
-    // setImageUrl(
-    //   `url('https://raw.githubusercontent.com/${projectInfo.full_name}/main/demo.png')`
-    // );
-
-    const main = checkImageURL(
-      `https://raw.githubusercontent.com/${projectInfo.full_name}/main/demo.png`
-    );
-    const master = checkImageURL(
-      `https://raw.githubusercontent.com/${projectInfo.full_name}/master/demo.png`
-    );
-
-    Promise.all([main, master])
-      .then((results) => {
-        const filteredResult = results.find((item) => item.ok);
-        filteredResult
-          ? setImageUrl(`url(${filteredResult.url})`)
-          : setImageUrl(`url(${IMAGE_NOT_FOUND})`);
-        // TODO
-        console.clear();
-      })
-      .catch((err) => setImageUrl(`url(${IMAGE_NOT_FOUND})`));
-    // TODO
-    // fetch(projectInfo.languages_url)
-    //   .then((response) => {
-    //     return response.json();
-    //   })
-    //   .then((languages) => {
-    //     setLanguagesData(languages);
-    //     console.log(languagesData);
-    //   });
-  }, []);
-
   return (
-    <div className="project">
-      <div
-        className="project-image"
-        style={{
-          backgroundImage: imageUrl,
-        }}
-      ></div>
-      <div className="project-name">{projectInfo.name}</div>
-      <a href={projectInfo.html_url} className="app-button" target="_blank">
-        View project
-      </a>
-    </div>
+    <a
+      className="project card"
+      href={`https://github.com/MafteiMugurel/${projectInfo.name}`}
+      target="_blank"
+      rel="noreferrer"
+    >
+      <div className="project-top">
+        <Icon name="book" className="project-repo-icon" />
+        <Icon name="arrowUpRight" className="project-arrow" />
+      </div>
+      <h3 className="project-name mono">{projectInfo.name}</h3>
+      <p className="project-description">{projectInfo.description}</p>
+      <div className="project-language mono">
+        <span
+          className="project-language-dot"
+          style={{ backgroundColor: languageColors[projectInfo.language] }}
+        />
+        {projectInfo.language}
+      </div>
+    </a>
   );
 };
 

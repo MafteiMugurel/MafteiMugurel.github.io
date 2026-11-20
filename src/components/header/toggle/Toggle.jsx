@@ -1,26 +1,21 @@
+import { useContext } from "react";
 import { ThemeContext, themes } from "../../../context/ThemeContext";
-import { useState } from "react";
+import Icon from "../../icons/Icon";
 import "./Toggle.scss";
 
 const Toggle = () => {
-  const [darkMode, setDarkMode] = useState(true);
+  const { theme, changeTheme } = useContext(ThemeContext);
+  const isDark = theme === themes.dark;
 
   return (
-    <ThemeContext.Consumer>
-      {({ changeTheme }) => (
-        <div className="toggle">
-          <input
-            type="checkbox"
-            id="switch"
-            onClick={() => {
-              setDarkMode(!darkMode);
-              changeTheme(darkMode ? themes.light : themes.dark);
-            }}
-          />
-          <label htmlFor="switch"></label>
-        </div>
-      )}
-    </ThemeContext.Consumer>
+    <button
+      className="toggle"
+      aria-label={isDark ? "Switch to light theme" : "Switch to dark theme"}
+      title={isDark ? "Light theme" : "Dark theme"}
+      onClick={() => changeTheme(isDark ? themes.light : themes.dark)}
+    >
+      <Icon name={isDark ? "sun" : "moon"} size={18} />
+    </button>
   );
 };
 

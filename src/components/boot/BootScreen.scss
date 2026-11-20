@@ -1,0 +1,86 @@
+.boot {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background-color: #05080b;
+  color: #b8c6d4;
+  font-size: 0.9rem;
+  transition: opacity 0.45s ease, transform 0.45s ease;
+
+  // CRT scanlines
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: repeating-linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.025) 0 1px,
+      transparent 1px 3px
+    );
+  }
+
+  &-leaving {
+    opacity: 0;
+    transform: scale(1.02);
+  }
+
+  &-inner {
+    width: min(640px, 100%);
+  }
+
+  &-line {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    animation: boot-in 0.15s ease;
+  }
+
+  &-tag {
+    color: #6b7c90;
+  }
+  &-ok {
+    color: #3ddc97;
+  }
+  &-wait {
+    color: #febc2e;
+  }
+
+  &-progress {
+    height: 3px;
+    margin-top: 22px;
+    border-radius: 2px;
+    background-color: #142028;
+    overflow: hidden;
+
+    span {
+      display: block;
+      height: 100%;
+      background-color: #3ddc97;
+      box-shadow: 0 0 12px #3ddc97;
+      transition: width 0.15s linear;
+    }
+  }
+
+  &-skip {
+    margin-top: 12px;
+    font-size: 0.75rem;
+    color: #4f6074;
+  }
+}
+
+@keyframes boot-in {
+  from {
+    opacity: 0;
+    transform: translateX(-6px);
+  }
+}
+
+@media (max-width: 600px) {
+  .boot {
+    font-size: 0.74rem;
+  }
+}

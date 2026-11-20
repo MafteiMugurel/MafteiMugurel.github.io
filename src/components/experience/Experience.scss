@@ -1,0 +1,105 @@
+.timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding-left: 32px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 7px;
+    top: 8px;
+    bottom: 8px;
+    width: 2px;
+    background: linear-gradient(var(--accent), var(--border));
+  }
+
+  &-item {
+    position: relative;
+  }
+
+  &-dot {
+    position: absolute;
+    left: -32px;
+    top: 26px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: var(--bg);
+    border: 3px solid var(--accent);
+  }
+
+  &-card {
+    padding: 24px 28px;
+
+    &:hover {
+      border-color: color-mix(in srgb, var(--accent) 50%, var(--border));
+    }
+
+    ul {
+      margin: 14px 0 18px;
+      padding-left: 20px;
+      color: var(--muted);
+
+      li {
+        margin-bottom: 6px;
+      }
+
+      li::marker {
+        color: var(--accent);
+      }
+    }
+  }
+
+  &-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 8px;
+
+    h3 {
+      margin: 0;
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+  }
+
+  &-period {
+    font-size: 0.82rem;
+    color: var(--accent);
+  }
+
+  &-company {
+    margin-top: 4px;
+    color: var(--accent-2);
+    font-size: 0.95rem;
+  }
+
+  &-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 600px) {
+  .timeline {
+    padding-left: 24px;
+
+    &::before {
+      left: 5px;
+    }
+
+    &-dot {
+      left: -24px;
+      width: 12px;
+      height: 12px;
+    }
+
+    &-card {
+      padding: 20px;
+    }
+  }
+}

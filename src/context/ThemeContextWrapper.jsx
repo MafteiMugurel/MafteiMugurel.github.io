@@ -1,45 +1,37 @@
 import React, { useState, useEffect } from "react";
 import { ThemeContext, themes } from "./ThemeContext";
 
-const ThemeContextWrapper = (props) => {
-  const [theme, setTheme] = useState(themes.dark);
+const STORAGE_KEY = "theme";
 
-  function changeTheme(theme) {
-    setTheme(theme);
+const getInitialTheme = () => {
+  try {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if (saved === themes.light || saved === themes.dark) return saved;
+  } catch (e) {
+    // storage unavailable (private mode etc.) – fall through
   }
+  return window.matchMedia &&
+    window.matchMedia("(prefers-color-scheme: light)").matches
+    ? themes.light
+    : themes.dark;
+};
+
+const ThemeContextWrapper = (props) => {
+  const [theme, setTheme] = useState(getInitialTheme);
 
   useEffect(() => {
-    switch (theme) {
-      case themes.light:
-        document
-          .querySelector(":root")
-          .style.setProperty("--primary", "#ffb633");
-        document
-          .querySelector(":root")
-          .style.setProperty("--secondary", "#0094c2");
-        document.querySelector(":root").style.setProperty("--white", "#313131");
-        document.querySelector(":root").style.setProperty("--black", "#ffffff");
-        document.querySelector(":root").style.setProperty("--grey", "#FFFBF1");
-        document
-          .querySelector(":root")
-          .style.setProperty("--burgundy", "#e10032");
-        document.querySelector(":root").style.setProperty("--cream", "#2c2c2c");
-        document.querySelector(":root").style.setProperty("--peach", "#ff9900");
-        break;
-      case themes.dark:
-      default:
-        document.querySelector(":root").removeAttribute("style");
-
-        break;
+    document.documentElement.setAttribute("data-theme", theme);
+    try {
+      localStorage.setItem(STORAGE_KEY, theme);
+    } catch (e) {
+      // ignore
     }
   }, [theme]);
 
   return (
-    <>
-      <ThemeContext.Provider value={{ theme: theme, changeTheme: changeTheme }}>
-        {props.children}
-      </ThemeContext.Provider>
-    </>
+    <ThemeContext.Provider value={{ theme, changeTheme: setTheme }}>
+      {props.children}
+    </ThemeContext.Provider>
   );
 };
 

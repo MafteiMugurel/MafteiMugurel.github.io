@@ -1,25 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
-      name="viewport"
-      content="width=device-width"
-      height="device-height"
-      initial-scale="1.0"
-      user-scalable="yes"
-      maximum-scale="5.0"
+      name="description"
+      content="Mugurel Maftei – IT Support Engineer in Bucharest: L1 technical support, networking and cybersecurity, working toward DevOps."
     />
-    <meta name="Description" content="Mugurel Maftei Portofolio" />
-
     <meta
       name="keywords"
-      content="HTML, CSS, JavaScript, Portfolio, Mugurel, Maftei, CV"
+      content="Mugurel Maftei, IT Support, Technical Support, Networking, Cybersecurity, DevOps, Cisco, PowerShell, Bucharest, CV"
     />
     <meta name="robots" content="index, follow" />
     <meta name="author" content="Mugurel Maftei" />
-    <title>Mugurel Maftei Portofolio</title>
+    <meta name="theme-color" content="#0a0f14" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      // Apply saved/system theme before first paint to avoid a flash.
+      (function () {
+        var t;
+        try { t = localStorage.getItem("theme"); } catch (e) {}
+        if (t !== "light" && t !== "dark") {
+          t = window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+        }
+        document.documentElement.setAttribute("data-theme", t);
+      })();
+    </script>
+    <title>Mugurel Maftei – IT Support Engineer</title>
   </head>
   <body>
     <div id="root"></div>

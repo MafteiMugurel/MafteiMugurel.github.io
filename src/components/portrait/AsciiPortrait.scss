@@ -1,0 +1,140 @@
+.portrait {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background-color: var(--surface);
+
+  &-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 10px 12px 10px 16px;
+    font-size: 0.75rem;
+    color: var(--muted);
+    border-bottom: 1px solid var(--border);
+  }
+
+  &-toggle {
+    display: inline-flex;
+    padding: 2px;
+    border-radius: 7px;
+    background-color: var(--surface-2);
+    border: 1px solid var(--border);
+
+    button {
+      padding: 3px 10px;
+      border: 0;
+      border-radius: 5px;
+      background: transparent;
+      color: var(--muted);
+      font: inherit;
+      cursor: pointer;
+
+      &.is-active {
+        background-color: var(--accent);
+        color: var(--on-accent);
+      }
+    }
+  }
+
+  &-box {
+    cursor: pointer;
+    position: relative;
+    aspect-ratio: 640 / 761;
+    overflow: hidden;
+    background: radial-gradient(
+        circle at 50% 30%,
+        color-mix(in srgb, var(--accent) 22%, transparent),
+        transparent 70%
+      ),
+      var(--surface-2);
+  }
+
+  &-ascii {
+    position: absolute;
+    inset: 0;
+    margin: 0;
+    font-family: var(--font-mono);
+    line-height: 1;
+    letter-spacing: 0;
+    white-space: pre;
+    overflow: hidden;
+    color: var(--accent);
+    text-shadow: 0 0 6px color-mix(in srgb, var(--accent) 45%, transparent);
+    user-select: none;
+    transition: opacity 0.5s ease;
+  }
+
+  &-photo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: bottom;
+    clip-path: inset(0 0 100% 0);
+    transition: clip-path 0.8s cubic-bezier(0.6, 0, 0.2, 1);
+  }
+
+  &-scan {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 2px;
+    background-color: var(--accent);
+    box-shadow: 0 0 14px 3px var(--accent);
+    opacity: 0;
+    transform: translateY(0);
+  }
+
+  &-hint {
+    padding: 8px 16px;
+    font-size: 0.72rem;
+    color: var(--muted);
+    border-top: 1px solid var(--border);
+  }
+
+}
+
+.portrait.is-photo .portrait-box,
+.portrait.is-ascii .portrait-box.is-hovered {
+  .portrait-photo {
+    clip-path: inset(0 0 0 0);
+  }
+  .portrait-ascii {
+    opacity: 0.12;
+  }
+  .portrait-scan {
+    animation: scan 0.8s cubic-bezier(0.6, 0, 0.2, 1);
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .portrait.is-ascii .portrait-box:hover {
+    .portrait-photo {
+      clip-path: inset(0 0 0 0);
+    }
+    .portrait-ascii {
+      opacity: 0.12;
+    }
+    .portrait-scan {
+      animation: scan 0.8s cubic-bezier(0.6, 0, 0.2, 1);
+    }
+  }
+}
+
+@keyframes scan {
+  0% {
+    opacity: 1;
+    top: 0;
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    top: 100%;
+  }
+}

@@ -1,119 +1,105 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import emailjs from "@emailjs/browser";
-import ErrorIcon from "../../../assets/icons/ErrorIcon.png";
+import Icon from "../../icons/Icon";
 import "./ContactForm.scss";
 
+const SERVICE_ID = "service_jq9adsj";
+const TEMPLATE_ID = "template_cskyjuw";
+const PUBLIC_KEY = "0fVzhdI6Lozxybc2r";
+
+const isValidEmail = (email) => /\S+@\S+\.\S+/.test(email);
+
 const ContactForm = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-  const [emailSent, setEmailSent] = useState("");
-  const [errorName, setErrorName] = useState(null);
-  const [errorEmail, setErrorEmail] = useState(null);
-  const [errorMessage, setErrorMessage] = useState(null);
-  const submit = () => {
-    if (name && email && message) {
-      const serviceId = "service_jq9adsj";
-      const templateId = "template_cskyjuw";
-      const userId = "0fVzhdI6Lozxybc2r";
-      const templateParams = {
-        name,
-        email,
-        message,
-      };
+  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [touched, setTouched] = useState({});
+  const [status, setStatus] = useState("idle"); // idle | sending | sent | error
 
-      emailjs
-        .send(serviceId, templateId, templateParams, userId)
-        .then((response) => console.log(response))
-        .then((error) => console.log(error));
+  const errors = {
+    name: !form.name.trim() ? "Please enter your name." : null,
+    email: !isValidEmail(form.email) ? "Please enter a valid email." : null,
+    message: !form.message.trim() ? "Please write a message." : null,
+  };
+  const hasErrors = Object.values(errors).some(Boolean);
 
-      setName("");
-      setEmail("");
-      setMessage("");
-      setEmailSent(
-        "Thank you for your message, we will be in touch in no time!"
-      );
-    } else {
-      alert("Please fill in all fields.");
-    }
+  const update = (field) => (event) =>
+    setForm({ ...form, [field]: event.target.value });
+  const touch = (field) => () => setTouched({ ...touched, [field]: true });
+
+  const submit = (event) => {
+    event.preventDefault();
+    setTouched({ name: true, email: true, message: true });
+    if (hasErrors) return;
+
+    setStatus("sending");
+    emailjs
+      .send(SERVICE_ID, TEMPLATE_ID, form, PUBLIC_KEY)
+      .then(() => {
+        setStatus("sent");
+        setForm({ name: "", email: "", message: "" });
+        setTouched({});
+      })
+      .catch(() => setStatus("error"));
   };
 
-  const isValidEmail = (email) => {
-    return /\S+@\S+\.\S+/.test(email);
-  };
-
-  const handleChangeName = (event) => {
-    if (!event.target.value) {
-      setErrorName(<img src={ErrorIcon} />);
-    } else {
-      setErrorName(null);
-    }
-    setName(event.target.value);
-  };
-
-  const handleChangeEmail = (event) => {
-    if (event.target.value && !isValidEmail(event.target.value)) {
-      setErrorEmail(<img src={ErrorIcon} />);
-    } else {
-      setErrorEmail(null);
-    }
-    setEmail(event.target.value);
-  };
-
-  const handleChangeMessage = (event) => {
-    if (!event.target.value) {
-      setErrorMessage(<img src={ErrorIcon} />);
-    } else {
-      setErrorMessage(null);
-    }
-    setMessage(event.target.value);
-  };
+  const field = (name, label, props) => (
+    <label className="form-field">
+      <span className="form-label mono">{label}</span>
+      {props.textarea ? (
+        <textarea
+          value={form[name]}
+          onChange={update(name)}
+          onBlur={touch(name)}
+          placeholder={props.placeholder}
+          rows={5}
+        />
+      ) : (
+        <input
+          type={props.type || "text"}
+          value={form[name]}
+          onChange={update(name)}
+          onBlur={touch(name)}
+          placeholder={props.placeholder}
+        />
+      )}
+      {touched[name] && errors[name] && (
+        <span className="form-error">{errors[name]}</span>
+      )}
+    </label>
+  );
 
   return (
-    <div id="contact-form" className="contact-form">
-      <div className="contact-form-context">
-        <input
-          className="contact-form-context-name app-imput"
-          type="text"
-          placeholder="Your Name"
-          value={name}
-          onChange={handleChangeName}
-        />
-        {errorName && <span>{errorName}</span>}
+    <form className="form card" onSubmit={submit} noValidate>
+      <div className="form-head mono">
+        <span>$</span> send-message --to mugurel
       </div>
-
-      <div className="contact-form-context">
-        <input
-          className="contact-form-context-email app-imput"
-          type="email"
-          placeholder="Your email address"
-          value={email}
-          onChange={handleChangeEmail}
-        />
-        {errorEmail && <span>{errorEmail}</span>}
-      </div>
-
-      <div className="contact-form-context">
-        <textarea
-          className="contact-form-context-textarea app-imput"
-          placeholder="Your message"
-          value={message}
-          onChange={handleChangeMessage}
-        ></textarea>
-        {errorMessage && <span>{errorMessage}</span>}
-      </div>
-
-      <div className="contact-form-context">
-        <button
-          className="contact-form-button app-button"
-          onClick={errorName || errorEmail || errorMessage ? null : submit}
-          disabled={errorName || errorEmail || errorMessage}
-        >
-          Send Message
-        </button>
-      </div>
-      <div className="contact-form-context">{emailSent}</div>
-    </div>
+      {field("name", "name", { placeholder: "Jane Doe" })}
+      {field("email", "email", {
+        type: "email",
+        placeholder: "jane@company.com",
+      })}
+      {field("message", "message", {
+        textarea: true,
+        placeholder: "Hi Mugurel, we have an opening for…",
+      })}
+      <button
+        className="btn btn-primary form-submit"
+        type="submit"
+        disabled={status === "sending"}
+      >
+        <Icon name="send" />
+        {status === "sending" ? "Sending…" : "Send message"}
+      </button>
+      {status === "sent" && (
+        <div className="form-status form-status-ok mono">
+          ✓ Message delivered. I'll get back to you soon.
+        </div>
+      )}
+      {status === "error" && (
+        <div className="form-status form-status-err mono">
+          ✗ Something went wrong. Please email me directly.
+        </div>
+      )}
+    </form>
   );
 };
 

@@ -1,42 +1,73 @@
 .about {
-  display: flex;
-  flex-flow: row;
+  display: grid;
+  grid-template-columns: minmax(0, 340px) minmax(0, 1fr);
+  gap: 56px;
   align-items: center;
-  justify-content: center;
-  background-color: var(--black);
-  min-height: 34vh;
 
-  .title {
-    white-space: nowrap;
-  }
-
-  &-description {
-    display: flex;
-    flex-flow: column;
-    padding-left: 10%;
-    padding-bottom: 2vh;
-
-    &-text {
-      font-size: 1.2rem;
-      line-height: 2rem;
+  &-text {
+    p {
+      margin: 0 0 18px;
+      font-size: 1.05rem;
+      color: var(--muted);
     }
 
-    &-buttons {
+    strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+  }
+
+  &-facts {
+    margin-top: 28px;
+    padding: 18px 22px;
+    font-size: 0.88rem;
+
+    &-head {
+      margin-bottom: 10px;
+      color: var(--muted);
+
+      span {
+        color: var(--accent-2);
+      }
+    }
+
+    &-row {
       display: flex;
-      flex-flow: row;
-      justify-content: space-evenly;
-      padding-top: 4vh;
+      gap: 10px;
+      padding: 3px 0;
+    }
+
+    &-key {
+      min-width: 76px;
+      color: var(--accent);
+    }
+
+    &-eq {
+      color: var(--muted);
     }
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media (max-width: 900px) {
   .about {
-    flex-flow: column;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
 
-    &-description-text {
-      line-height: 1.5rem;
-      font-size: 1rem;
+    &-photo {
+      width: 100%;
+      max-width: 340px;
+      margin: 0 auto;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .about-facts {
+    padding: 16px;
+    font-size: 0.8rem;
+
+    &-key {
+      min-width: 64px;
     }
   }
 }

@@ -1,47 +1,79 @@
-.recommendations {
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-  justify-content: center;
+.recs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
 
-  &-content {
+  &-item {
     display: flex;
-    flex-flow: column;
+    flex-direction: column;
+    margin: 0;
+    padding: 28px;
+  }
 
-    &-recommendation {
-      display: flex;
-      flex-flow: column;
-      border-radius: 4px;
-      padding: 2vh 2vw;
-      border: 1px groove var(--primary);
-      background-color: var(--grey);
+  &-mark {
+    font-size: 3rem;
+    line-height: 1;
+    height: 28px;
+    color: var(--accent);
+  }
 
-      &-text {
-        line-height: 2rem;
-        font-size: 1.2rem;
+  blockquote {
+    flex: 1;
+    margin: 0 0 24px;
+    color: var(--muted);
+    font-size: 0.98rem;
+  }
 
-        &::after,
-        &::before {
-          content: '"';
-          padding: 0 0.5vw;
-          font-size: 1.6rem;
-          color: var(--primary);
-        }
-      }
+  figcaption {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding-top: 18px;
+    border-top: 1px solid var(--border);
+  }
 
-      &-author {
-        align-self: end;
-        padding: 1vh 0 2vh;
-        font-size: 1rem;
-        color: var(--primary);
-      }
-    }
+  &-avatar {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--accent-2);
+    background-color: color-mix(in srgb, var(--accent-2) 14%, transparent);
+  }
+
+  &-author {
+    font-weight: 600;
+  }
+
+  &-role {
+    font-size: 0.78rem;
+    color: var(--muted);
   }
 }
 
-@media only screen and (max-width: 768px) {
-  .recommendations-content-recommendation-text {
-    line-height: 1.5rem;
-    font-size: 1rem;
+@media (max-width: 900px) {
+  .recs {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.recs-author a {
+  color: var(--text);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--accent) 50%, transparent);
+  text-underline-offset: 3px;
+  transition: color 0.2s ease;
+
+  span {
+    color: var(--accent);
+  }
+
+  &:hover {
+    color: var(--accent);
   }
 }

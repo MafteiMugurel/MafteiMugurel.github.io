@@ -1,67 +1,87 @@
 .education {
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
 
-  &-content {
+  &-card {
     display: flex;
-    flex-flow: row;
-    justify-content: space-evenly;
-    width: 100%;
-    padding-bottom: 2vh;
+    flex-direction: column;
+    padding: 24px;
 
-    &-school {
-      display: flex;
-      flex-flow: column;
-      align-items: center;
-      justify-content: flex-start;
-
-      img {
-        height: 8vh;
-        border-radius: 50%;
-      }
-
-      &:first-child {
-        padding-right: 2vw;
-      }
-
-      &:last-child {
-        padding-left: 2vw;
-      }
-
-      &-text {
-        text-align: center;
-
-        div {
-          padding-top: 0.5vh;
-        }
-
-        div:first-child,
-        div:last-child {
-          color: var(--cream);
-          font-size: 1rem;
-        }
-
-        div:nth-child(2) {
-          color: var(--primary);
-          font-size: 1.4rem;
-        }
-
-        div:nth-child(3) {
-          color: var(--white);
-          font-size: 1.2rem;
-        }
-      }
+    &:hover {
+      border-color: color-mix(in srgb, var(--accent) 50%, var(--border));
     }
+
+    h3 {
+      margin: 6px 0 4px;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    p {
+      margin: 12px 0 0;
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+  }
+
+  &-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 18px;
+
+    img,
+    .education-badge {
+      width: 46px;
+      height: 46px;
+      border-radius: 10px;
+      object-fit: cover;
+      background-color: #fff;
+    }
+  }
+
+  &-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--on-accent);
+    background-color: var(--accent) !important;
+  }
+
+  &-period {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.78rem;
+    color: var(--muted);
+  }
+
+  &-live {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--accent);
+    animation: pulse 2s infinite;
+  }
+
+  &-type {
+    font-size: 0.78rem;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  &-school {
+    color: var(--accent-2);
+    font-size: 0.9rem;
   }
 }
 
-@media only screen and (max-width: 768px) {
-  .education-content {
-    flex-flow: column;
-    &-school {
-      padding: 1vh 0;
-    }
+@media (max-width: 900px) {
+  .education {
+    grid-template-columns: minmax(0, 1fr);
   }
 }

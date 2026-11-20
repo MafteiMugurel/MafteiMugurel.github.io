@@ -1,8 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-    <defs>
-        <style>.cls-1{font-size:31.96px;fill:#ffb633;font-family:Roboto-Medium, Roboto;font-weight:500;}</style>
-    </defs>
-    <g id="Layer_6" data-name="Layer 6">
-        <text class="cls-1" transform="translate(2.01 27.34)">M</text>
-    </g>
+  <rect width="32" height="32" rx="7" fill="#0a0f14"/>
+  <path d="M8 10l6 6-6 6" fill="none" stroke="#3ddc97" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M16 23h8" stroke="#3ddc97" stroke-width="3" stroke-linecap="round"/>
 </svg>
